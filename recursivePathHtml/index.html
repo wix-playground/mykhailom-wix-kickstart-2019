@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<nav id="main-menu">
+    <!-- Dynamic content from JavaScript will go here -->
+</nav>
+
+<script>
+    function onClickHandler(event) {
+        const target = event.target;
+        if (target.tagName.toLowerCase() === 'span') {
+            const subMenu = target.nextSibling;
+            const isSubMenuOpen = subMenu.style.display === 'block';
+            subMenu.style.display = isSubMenuOpen ? 'none' : 'block';
+        }
+    }
+
+    function buildNavigation(navigation, underThisNode) {
+        const ul = document.createElement('ul');
+        ul.style.listStyleType = 'none';
+
+        navigation.forEach(nav => {
+            const li = document.createElement('li');
+            if (nav.href) {
+                const a = document.createElement('a');
+                a.innerText = nav.title;
+                a.href = nav.href;
+                li.appendChild(a);
+            } else if(nav.children) {
+                const span = document.createElement('span');
+                span.innerText = nav.title;
+                span.style.cursor = 'pointer';
+                li.appendChild(span);
+
+                buildNavigation(nav.children, li);
+
+                const subUl = li.children[1];
+                subUl.style.display = 'none';
+            }
+
+            ul.appendChild(li);
+        });
+
+        underThisNode.appendChild(ul);
+    }
+</script>
+<script>
+    const navigation = [
+        {
+            title: 'Home',
+            href: '#1'
+        },
+        {
+            title: 'Courses',
+            children: [
+                {
+                    title: 'FED',
+                    href: '#2'
+                },
+                {
+                    title: 'UX',
+                    href: '#3'
+                },
+                {
+                    title: 'Some path',
+                    children: [
+                        {
+                            title: 'Sub path',
+                            href: '#4'
+                        },
+                        {
+                            title: 'Other path',
+                            children: [
+                                {
+                                    title: 'Other sub path',
+                                    href: '#5'
+                                },
+                                {
+                                    title: 'One more path',
+                                    href: '#5'
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            title: 'About',
+            children: [
+                { title: 'Contact Us', href: '#2' },
+                { title: 'Location', href: '#3' }
+            ]
+        }
+    ];
+    buildNavigation(navigation, document.getElementById('main-menu'));
+    document.getElementById('main-menu').addEventListener('click', onClickHandler);
+</script>
+</body>
+</html>
