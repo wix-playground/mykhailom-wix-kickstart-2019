@@ -1,0 +1,19 @@
+{
+  "replies": [
+    {
+      "id": 11,
+      "author": "john",
+      "text": "Reply 1"
+    },
+    {
+      "id": 21,
+      "author": "michael",
+      "text": "Reply 2"
+    },
+    {
+      "id": 31,
+      "author": "michael",
+      "text": "Reply 3"
+    }
+  ]
+}

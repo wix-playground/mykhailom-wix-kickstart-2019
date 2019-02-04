@@ -1,0 +1,12 @@
+{
+  "list": [
+    {
+      "author": "john",
+      "text": "I'm the first one"
+    },
+    {
+      "author": "michael",
+      "text": "I'm the second one"
+    }
+  ]
+}

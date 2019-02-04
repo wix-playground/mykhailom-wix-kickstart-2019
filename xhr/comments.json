@@ -1,0 +1,19 @@
+{
+  "comments": [
+    {
+      "id": 1,
+      "author": "john",
+      "text": "I'm the first one"
+    },
+    {
+      "id": 2,
+      "author": "michael",
+      "text": "I'm the second one"
+    },
+    {
+      "id": 3,
+      "author": "michael",
+      "text": "I'm the second one"
+    }
+  ]
+}

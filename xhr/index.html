@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>XHR</title>
+</head>
+<body>
+<div id="comments"></div>
+</body>
+<script>
+    const createReply = reply => {
+        return (
+            `<li>${reply.author} : ${reply.text}</li>`
+        )
+    };
+
+    const createReplies = replies => {
+        return (
+            `<ul>${replies.map(createReply).join('')}</ul>`
+        )
+    };
+
+    const creatComment = comment => {
+        return (
+            `<div>
+                <h3>${comment.author}</h3>
+                <p>${comment.text}</p>
+                ${createReplies(comment.replies)}
+            </div>`
+        )
+    };
+
+    const addComments = commentsList => {
+        const fragment = document.createDocumentFragment();
+        commentsList.map(comment => {
+            const div = document.createElement('div');
+            div.innerHTML = creatComment(comment);
+            fragment.appendChild(div);
+        });
+        document.getElementById('comments').appendChild(fragment);
+    };
+</script>
+<script src="XHR.js"></script>
+<script src="XHRPromise.js"></script>
+</html>

@@ -1,0 +1,34 @@
+{
+  "replies": [
+    {
+      "commentId": 1,
+      "id": 11,
+      "author": "john",
+      "text": "Reply 1"
+    },
+    {
+      "commentId": 2,
+      "id": 21,
+      "author": "michael",
+      "text": "Reply 2"
+    },
+    {
+      "commentId": 2,
+      "id": 22,
+      "author": "nick",
+      "text": "Reply 3"
+    },
+    {
+      "commentId": 1,
+      "id": 12,
+      "author": "nick",
+      "text": "Reply 3"
+    },
+    {
+      "commentId": 3,
+      "id": 31,
+      "author": "richard",
+      "text": "Reply 7"
+    }
+  ]
+}
