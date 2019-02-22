@@ -1,0 +1,27 @@
+@font-face {
+    font-family: 'Glyphter';
+    src: url('./fonts/icons/Glyphter.eot');
+    src: url('./fonts/icons/Glyphter.eot?#iefix') format('embedded-opentype'),
+    url('./fonts/icons/Glyphter.woff') format('woff'),
+    url('./fonts/icons/Glyphter.ttf') format('truetype'),
+    url('./fonts/icons/Glyphter.svg#Glyphter') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.icon:before{
+    display: inline-block;
+    font-family: 'Glyphter', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-arrow:before{content:'\0041';}
+.icon-filter:before{content:'\0042';}
+.icon-refresh:before{content:'\0043';}
+.icon-search-place-holder:before{content:'\0044';}
+.icon-search:before{content:'\0045';}
+.icon-settings:before{content:'\0046';}
